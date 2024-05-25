@@ -1,27 +1,37 @@
 <script>
     export let resume = {
-        wantedJobTitle: "Enginner",
-        firstname: "Santhosh",
-        email: "Santhosh@example.com",
-        country: "India",
-        lastName: "Kumar",
-        phone: "1234567890",
-        city: "Chennai",
-        address: "Chennai",
-        postalCode: "600100",
-        nationality: "Indian",
-        dob: "1996-09-10",
+        WantedJobTitle: { value: "Engineer", type: "text" },
+        FirstName: { value: "Santhosh", type: "text" },
+        Description: {
+            value: "Santhosh@example.com",
+            type: "textarea",
+            class: "full-width",
+        },
+        Email: { value: "Santhosh@example.com", type: "email" },
+        Country: { value: "India", type: "text" },
+        LastName: { value: "Kumar", type: "text" },
+        Phone: { value: "1234567890", type: "tel" },
+        City: { value: "Chennai", type: "text" },
+        Address: { value: "Chennai", type: "text" },
+        PostalCode: { value: "600100", type: "text" },
+        Nationality: { value: "Indian", type: "text" },
+        DateOfBirth: { value: "1996-09-10", type: "date" },
     };
 </script>
 
 <div class="container">
     <header>
-        <h1>{resume.firstname} {resume.lastName}</h1>
+        <h1>{resume.FirstName.value} {resume.LastName.value}</h1>
+        -->
         <p>Your Profession</p>
         <div class="contact-info">
-            <p><strong>Email:</strong> {resume.email}</p>
-            <p><strong>Phone:</strong> (123) 456-7890</p>
-            <p><strong>Address:</strong> 123 Main Street, City, State, Zip</p>
+            <p><strong>Email:</strong> {resume.Email.value}</p>
+            <p><strong>Phone:</strong> {resume.Phone.value}</p>
+
+            <p>
+                <strong>Address:</strong> 123 Main Street, {resume.City.value} ,
+                State,{resume.PostalCode.value}
+            </p>
         </div>
     </header>
     <main>

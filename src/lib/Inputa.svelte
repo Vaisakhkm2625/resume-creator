@@ -1,4 +1,5 @@
 <script>
+    export let resume = {};
     export let key;
     export let field;
 </script>
@@ -17,14 +18,15 @@
     <!-- /> -->
 
     {#if field.type === "text"}
-        <input type="text" id={key} bind:value={field.value} />
+        <input type="text" id={key} bind:value={resume[key].value} />
+        {field.value}
     {:else if field.type === "textarea"}
-        <textarea id={key} bind:value={field.value}></textarea>
+        <textarea id={key} bind:value={resume[key].value}></textarea>
     {:else if field.type === "email"}
-        <input type="email" id={key} bind:value={field.value} />
+        <input type="email" id={key} bind:value={resume[key].value} />
     {:else if field.type === "tel"}
-        <input type="tel" id={key} bind:value={field.value} />
+        <input type="tel" id={key} bind:value={resume[key].value} />
     {:else if field.type === "date"}
-        <input type="date" id={key} bind:value={field.value} />
+        <input type="date" id={key} bind:value={resume[key].value} />
     {/if}
 </div>

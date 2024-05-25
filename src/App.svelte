@@ -1,7 +1,8 @@
 <script>
     import "@picocss/pico";
-    import Template from "./lib/Template.svelte";
-    import Input from "./lib/Input.svelte";
+    //import Template from "./lib/Template.svelte";
+    import Template1 from "./lib/Template1.svelte";
+    import Inputa from "./lib/Inputa.svelte";
 
     let resume = {
         WantedJobTitle: { value: "Engineer", type: "text" },
@@ -22,7 +23,7 @@
         DateOfBirth: { value: "1996-09-10", type: "date" },
     };
 
-    let showReactiveVariables = false;
+    let showReactiveVariables = true;
     function handleSubmit() {
         console.log("Form submitted with:", resume);
     }
@@ -30,31 +31,32 @@
 
 <main class="container">
     <div>
-        <h1>INPUT</h1>
+        <h1>Resume Bulder</h1>
         <form on:submit|preventDefault={handleSubmit} class="custom-grid">
             {#each Object.entries(resume) as [key, field]}
-                <Input {key} {field}></Input>
+                <Inputa bind:resume bind:key bind:field></Inputa>
+                <!--<input type="text" id={key} bind:value={field.value} /> -->
             {/each}
             <button type="submit" class="full-width">Submit</button>
         </form>
     </div>
 
-    <Template bind:resume />
+    <Template1 bind:resume />
 
     <div>
         {#if showReactiveVariables}
             <div>
-                wantedJobTitle: {resume.wantedJobTitle.value} <br />
-                firstname: {resume.firstname.value} <br />
-                email: {resume.email.value} <br />
-                country: {resume.country.value} <br />
-                lastName: {resume.lastName.value} <br />
-                phone: {resume.phone.value} <br />
-                city: {resume.city.value} <br />
-                address: {resume.address.value} <br />
-                postalCode: {resume.postalCode.value} <br />
-                nationality: {resume.nationality.value} <br />
-                dob: {resume.dob.value} <br />
+                wantedJobTitle: {resume.WantedJobTitle.value} <br />
+                firstname: {resume.FirstName.value} <br />
+                email: {resume.Email.value} <br />
+                country: {resume.Country.value} <br />
+                lastName: {resume.LastName.value} <br />
+                phone: {resume.Phone.value} <br />
+                city: {resume.City.value} <br />
+                address: {resume.Address.value} <br />
+                postalCode: {resume.PostalCode.value} <br />
+                nationality: {resume.Nationality.value} <br />
+                dob: {resume.DateOfBirth.value} <br />
             </div>
         {/if}
     </div>
