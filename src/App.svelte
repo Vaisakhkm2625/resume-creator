@@ -3,7 +3,10 @@
     import Template from "./Templates/Template.svelte";
     import Template1 from "./Templates/Template1.svelte";
     import Input from "./lib/Input.svelte";
+    import ListView from "./lib/ListView.svelte";
+
     let templatePaths = "../Templates/*.svelte";
+    let showReactiveVariables = false;
 
     let resume = {
         WantedJobTitle: { value: "Engineer", type: "text" },
@@ -24,25 +27,38 @@
         DateOfBirth: { value: "1996-09-10", type: "date" },
     };
 
-    let showReactiveVariables = true;
     function handleSubmit() {
         console.log("Form submitted with:", resume);
     }
 </script>
 
+<header class="container">
+    <h1 class="">Resume Bulder</h1>
+</header>
 <main class="container">
     <div>
-        <h1>Resume Bulder</h1>
         <form on:submit|preventDefault={handleSubmit} class="custom-grid">
             {#each Object.entries(resume) as [key, field]}
-                <Inputa bind:resume bind:key bind:field></Inputa>
+                <Input bind:resume bind:key bind:field></Input>
                 <!--<input type="text" id={key} bind:value={field.value} /> -->
             {/each}
             <button type="submit" class="full-width">Submit</button>
         </form>
     </div>
 
-    <Template1 bind:resume />
+    <div class="template-container">
+        <Template1 bind:resume />
+    </div>
+
+    <div class="picker grid">
+        <Template bind:resume />
+        <Template bind:resume />
+        <Template1 bind:resume />
+        <Template1 bind:resume />
+        <Template1 bind:resume />
+        <Template1 bind:resume />
+    </div>
+    <ListView />
 
     <div>
         {#if showReactiveVariables}
@@ -71,6 +87,14 @@
     }*/
     :global(.full-width) {
         grid-column: span 2;
+    }
+    .template-container {
+        border: 1px solid black;
+    }
+    .picker {
+        zoom: 0.4;
+        -moz-transform: scale(3);
+        -moz-transform-origin: 0 0;
     }
 
     .custom-grid {
