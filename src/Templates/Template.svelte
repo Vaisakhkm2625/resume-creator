@@ -21,11 +21,6 @@
     resume = { ...resume, ...additionalProps };
 </script>
 
-template:
-<input type="text" bind:value={resume.wantedJobTitle.value} />
-template/
-{JSON.stringify(resume)}
-
 <div class="resume">
     <header>
         <h1>John Doe</h1>

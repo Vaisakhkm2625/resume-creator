@@ -1,8 +1,9 @@
 <script>
     import "@picocss/pico";
-    //import Template from "./lib/Template.svelte";
-    import Template1 from "./lib/Template1.svelte";
-    import Inputa from "./lib/Inputa.svelte";
+    import Template from "./Templates/Template.svelte";
+    import Template1 from "./Templates/Template1.svelte";
+    import Input from "./lib/Input.svelte";
+    let templatePaths = "../Templates/*.svelte";
 
     let resume = {
         WantedJobTitle: { value: "Engineer", type: "text" },
