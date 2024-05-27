@@ -1,5 +1,5 @@
 <script>
-    let resume = {
+   export let resume = {
         wantedJobTitle: { value: "Engineer", type: "text" },
         firstname: { value: "Santhosh", type: "text" },
         email: { value: "Santhosh@example.com", type: "email" },
@@ -23,17 +23,17 @@
 
 <div class="resume">
     <header>
-        <h1>John Doe</h1>
-        <p>Web Developer</p>
-        <p>Email: john.doe@example.com | Phone: (123) 456-7890</p>
+    <!--<h1>{resume.FirstName.value}</h1>-->
+    <h1>{resume.FirstName.value}</h1>
+        <p>{resume.WantedJobTitle.value}</p>
+        <p>Email: {resume.Email.value} | Phone: {resume.Phone.value}</p>
         <p>LinkedIn: linkedin.com/in/johndoe | GitHub: github.com/johndoe</p>
     </header>
     <section>
         <h2>Profile</h2>
         <p>
-            Experienced web developer with a strong background in developing
-            award-winning applications for a diverse clientele. Proven ability
-            to deliver high-quality web solutions on time and within budget.
+      {resume.Description.value}
+
         </p>
     </section>
     <section>

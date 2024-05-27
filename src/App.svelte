@@ -12,7 +12,7 @@
         WantedJobTitle: { value: "Engineer", type: "text" },
         FirstName: { value: "Santhosh", type: "text" },
         Description: {
-            value: "Santhosh@example.com",
+            value: "Experienced web developer with a strong background in developing award-winning applications for a diverse clientele. Proven ability to deliver high-quality web solutions on time and within budget.",
             type: "textarea",
             class: "full-width",
         },
